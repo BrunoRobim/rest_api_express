@@ -11,16 +11,17 @@ router.get("/", (req, res, next) => {
 // CREATE
 router.post("/", (req, res, next) => {
 
-    const produto = {
-        nome:   req.body.nome,
-        preco:  req.body.preco 
+    const pedido = {
+        id_produto: req.body.id_produto,
+        quatidade: req.body.quantidade
     };
 
     res.status(200).send({
-        mensagem: "Produto criado com sucesso.",
-        produtoCriado: produto
+        mensagem: "Pedido criado com sucesso.",
+        pedidoCriado: pedido
     });
 });
+
 
 // CONSULT BY ID
 router.get("/:id_produto", (req, res, next) => {
